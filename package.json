@@ -1,6 +1,6 @@
 {
-  "name": "giscat-js",
-  "version": "1.0.0",
+  "name": "giscatjs",
+  "version": "1.0.1",
   "description": "js util for giscat",
   "main": "index.js",
   "scripts": {

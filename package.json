@@ -1,0 +1,24 @@
+{
+  "name": "giscat-js",
+  "version": "1.0.0",
+  "description": "js util for giscat",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build:watch": "webpack --watch"
+  },
+  "keywords": [
+    "gis",
+    "geojson",
+    "proto"
+  ],
+  "author": "liuyu",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "google-protobuf": "3.21.2"
+  }
+}

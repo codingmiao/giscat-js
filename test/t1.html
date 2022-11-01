@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../dist/giscat-js.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+    function sendGet() {
+        const req = new XMLHttpRequest();
+        req.open("GET", "./data/testbytes.pbf", true);
+        req.responseType = "arraybuffer";
+
+        req.onload = () => {
+            const arrayBuffer = req.response;
+            if (arrayBuffer) {
+                const bytes = new Uint8Array(arrayBuffer);
+                const fc = giscat.pojo.ProtoFeatureConverter.proto2featureCollection(bytes);
+                console.log(fc)
+                console.log(JSON.stringify(fc))
+            }
+        };
+
+        req.send();
+
+
+    }
+
+    sendGet()
+
+
+
+
+</script>
+</body>
+</html>
+

@@ -14,7 +14,7 @@ or
 # ProtoFeature bytes to geojson object
 
 ```js
-    function sendGet() {
+function sendGet() {
     const req = new XMLHttpRequest();
     req.open("GET", "./data/testbytes.pbf", true);
     req.responseType = "arraybuffer";

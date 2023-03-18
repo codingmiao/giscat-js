@@ -33,12 +33,23 @@ function proto2featureCollection(bytes) {
         })
     }
 
-    pPropertiess.forEach(properties => {
-        parseMap(properties, ctx)
-    })
-    return {
+    // pPropertiess.forEach(properties => {
+    //     parseMap(properties, ctx)
+    // })
+    let headers = null;
+    if (pFeatureCollection.hasHeaders()){
+        headers = pFeatureCollection.getHeaders()
+        headers = parseMap(headers, ctx)
+    }
+
+    const res = {
         type: 'FeatureCollection', features: features
     }
+    if (headers) {
+        res.headers = headers
+    }
+
+    return res;
 }
 
 
